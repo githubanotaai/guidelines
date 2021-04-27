@@ -16,8 +16,8 @@
 - Utilize o nome do projeto em inglês.
 - Utilize `lowercase` e `kebab-case` para nomear os repositórios.
 - Caso o projeto contenha mais de uma palavra utilize as mesmas regras de nomenclatura.
-- Se o projeto for separado por módulos, o nome deve conter 2 partes: `<projeto>-<módulo>`, deve-se utilizar um dos nomes de módulo como sufixo: `api`, `worker`, `job`.
-- Para o módulo do frontend, pode-se utilizar `frontend`, `front` ou não especificar o módulo.
+- Se o projeto for separado por módulos, o nome deve conter 2 partes: `<projeto>-<módulo>`, nomes de módulo sugeridos são: `api`, `worker`, `job`.
+- Se o módulo for um frontend, pode-se utilizar `frontend`, `front` ou não especificar o módulo.
 - Se o projeto não for separado por módulos, utilizar somente seu nome. Por exemplo: `integration`, `admin`.
 - Se for utilizar repositórios para versionar o projeto, adicionar os sufixos *v1*, *v2*, etc. Por exemplo: `pizza-api-v1`.
 - Exemplos utilizando o projeto "intelligence": `intelligence-api`, `intelligence-analytics-worker`, `intelligence-admin`.
