@@ -5,6 +5,11 @@
 - Utilizamos Github para hospedagem do nosso código.
 - Por enquanto não obrigamos autenticação por 2 fatores, mas é uma boa ideia começar a utilizar.
 
+## Definições
+
+- projeto: produto da anota ai
+- módulo: componente de um produto, por exemplo `api`, `frontend` e `worker`.
+
 ## Repositórios
 
 - Só utilize repositórios públicos sob estrita necessidade.
