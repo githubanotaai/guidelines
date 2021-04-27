@@ -9,7 +9,7 @@
 
 - Só utilize repositórios públicos sob estrita necessidade.
 - Utilize `lowercase` e `kebab-case` para nomear os repositórios.
-- Nome deve conter 3 partes: `<projeto>-<módulo>`, o `<módulo>` é opcional, porém se o projeto for separado por módulos deve-se utilizar um dos nomes de módulo como sufixo: `api`, `worker`, `job`.
+- Nome deve conter 2 partes: `<projeto>-<módulo>`, o `<módulo>` é opcional, porém se o projeto for separado por módulos deve-se utilizar um dos nomes de módulo como sufixo: `api`, `worker`, `job`.
 - Exemplos de nome de repositórios: `integration-api`, `intelligence-churn-analysis-job`, `integration-frontend`.
 - Se for utilizar repositórios para versionar o projeto, adicionar os sufixos *v1*, *v2*, etc. Por exemplo: `pizza-api-v1`.
 - Se o projeto não for separado em módulos, utilizar somente seu nome. Por exemplo: `integration`, `admin`.
