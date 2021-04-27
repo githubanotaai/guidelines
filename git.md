@@ -8,6 +8,7 @@
 ## Repositórios
 
 - Só utilize repositórios públicos sob estrita necessidade.
+- Utilize o nome do projeto em inglês.
 - Utilize `lowercase` e `kebab-case` para nomear os repositórios.
 - Se o projeto for separado por módulos, o nome deve conter 2 partes: `<projeto>-<módulo>`, deve-se utilizar um dos nomes de módulo como sufixo: `api`, `worker`, `job`, `frontend`, `dashboard`.
 - Se o projeto não for separado por módulos, utilizar somente seu nome. Por exemplo: `integration`, `admin`.
