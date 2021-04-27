@@ -1,119 +1,66 @@
-# STRV Git Guidelines
+# Diretrizes para utilização do Git
 
 ## GitHub
 
-- We use GitHub for hosting Git repositories
-- We require two-factor authentication
+- Utilizamos Github para hospedagem do nosso código.
+- Por enquanto não obrigamos autenticação por 2 fatores, mas é uma boa ideia começar a utilizar.
 
-## Repositories
+## Repositórios
 
-- Use `lowercase`, `kebab-case` for repository names
-- Repository name should consist of three parts: `<project>-<platform>-<module>`, the `<module>` part is optional and the `<platform>` part is one of these: *android*, *ios*, *backend*, *frontend*, *rn*, *unity*
-- Examples of repository names: `surge-android`, `surge-ios`, `surge-backend-api`, `surge-frontend-admin`, `surge-rn`
-- If project name consists of multiple words, use dashes as a separator, e.g. `rich-uncles-frontend`
-- If project has multiple versions, use *v1*, *v2* suffixes, e.g. `futupilot-backend-api-v1`, `futupilot-backend-api-v2`
-- If API, web or RN are mixed in a single repository, use `js-monorepo` as a platform identifier, e.g. `ordr-js-monorepo`
-- The same rules above apply to public repositories
-- Each project must have proper *.gitignore*, ignoring temporary files and binaries
-- Each project must have a *README.md* file with instructions and other important notes about how to build it and run it
-
-## Teams
-
-- Each project should have a team at GitHub
-- Each repository should be assigned to a team
-- Developers should be assigned to teams rather than to specific repositories
-- Use `PascalCase` for team names, e.g. `RichUncles`
-- If you need to add a suffix, separate it with the dash symbol, e.g. `RichUncles-Admin`
+- Só utilize repositórios públicos sob estrita necessidade.
+- Utilize `lowercase` e `kebab-case` para nomear os repositórios.
+- Nome deve conter 3 partes: `<projeto>-<módulo>`, o `<módulo>` é opcional, porém se o projeto for separado por módulos deve-se utilizar um dos nomes de módulo como sufixo: `api`, `worker`, `job`.
+- Exemplos de nome de repositórios: `integration-api`, `intelligence-churn-analysis-job`, `integration-frontend`.
+- Se for utilizar repositórios para versionar o projeto, adicionar os sufixos *v1*, *v2*, etc. Por exemplo: `pizza-api-v1`.
+- Se o projeto não for separado em módulos, utilizar somente seu nome. Por exemplo: `integration`, `admin`.
+- Todos repositorios devem conter um *.gitignore* ignorando arquivos temporários e binários, como `node_modules/*`.
+- Todos repositórios devem conter um *README.md* com instruções básicas de uso.
 
 ## Branches
 
-- Each project should have *master* and *dev* branches, use *dev* rather than *develop*
-- The master branch should be kept stable at all times, it reflects code currently running on production
-- Code in master and dev branches should always be buildable
-- Use `lowercase`, `kebab-case` for branch names, e.g. `database-migration`
-- Use `feature/` prefix for feature branches, e.g. `feature/password-reset`
-- Use `fix/` prefix for bugfixes, e.g. `fix/time-zone`
-- Use `refactor/` prefix for refactoring, e.g. `refactor/update-libraries`
-- Always remove inactive branches
-- We strongly recommend [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/) for bigger teams, optional for smaller teams
+- Todos projetos devem conter uma branch *master* e *develop*.
+- A branch master deve conter código estável sempre, o sistema de produção roda a partir da mesma.
+- A branch develop deve conter código compilável sempre.
+- Utilize `lowercase` e `kebab-case` para nomes de branch, por exemplo: `database-migration`.
+- Utilize `feature/` como prefixo para branches de recursos, por exemplo: `feature/login`.
+- Utilize `hotfix/` para hotfixes, por exemplo: `hotfix/failing-to-sign-up`.
+- Utilize `refactor/` para refatorações, por exemplo: `refactor/user-password-reset`.
+- Sempre remova branches inativas.
+- Utilizamos o [Git Flow](http://nvie.com/posts/a-successful-git-branching-model/) para projetos já em produção, sendo opcional para projetos em fase inicial.
 
 ## Pull Requests
 
-- Developers in a team should send a pull request before merging a branch and the pull request should be reviewed by another developer in the team
+- A utilização de Pull Requests é obrigatória, não é permitido fazer o merge manual.
 
-## Committing and Pushing
+## Commits e Pushes
 
-- Each commit should address 1 logical change
-- Never commit temporary files, binaries or other compiled sources, etc.
-- Never commit passwords or other sensitive data to a public repository
-- When you make a private repository public, always consider recreating all secrets which might have ever been part of the Git history
-- Use `git push --force` only on feature branches and when you are sure nobody from your team is working on that branch or has another branch based off of that branch
-- Don't commit code with trailing whitespace
-- Don't commit code without a new line at the end of the file ([POSIX standard](https://stackoverflow.com/questions/729692/why-should-text-files-end-with-a-newline))
-- Make sure all tests and linter pass before pushing any code
-- Follow the "leave the campground cleaner than you found it" rule for any code you commit
-
-## Commit Messages
-
-- You have two options to choose from:
-
-### Conventional Commits
-
-- Simply follow the [`Conventional Commits`](https://www.conventionalcommits.org) strategy
-- Following this convention allows other tools to extract meaningful data from your commits and in turn offer you:
-    - Automatic semantic release versioning
-    - Changelog generation
-    - Clear visibility into breaking changes
-- Conventional commits can be optionally enforced (linted) using [`commitlint`](https://commitlint.js.org) and [`@strv/commitlint-config`](https://github.com/strvcom/code-quality-tools/tree/master/packages/commitlint-config)
-
-### General Commit Conventions
-
-- These conventions have been around for quite some time and provide a great baseline for your commit messages
-- Message should describe the changes well in the code
-- Follow [this commit message convention](https://chris.beams.io/posts/git-commit/)
-- Separate subject from body with a blank line
-- Limit the subject line to 50 characters
-- Capitalize the subject line
-- Do not end the subject line with a period
-- Use present tense, imperative mood in the subject line, e.g. `Add online indicator`, not ~~`Adds online indicator`~~, ~~`Added online indicator`~~
-- Wrap the body at 72 characters
-- Use the body to explain what and why vs. how (i.e. describe why this feature exists in terms of business value rather than how you implemented it, unless the implementation itself is complex enough to warrant explaining to future developers)
-- If you use an issue tracker, put references to them at the end of the message
-- For example: _"Fix NullPointerException in ProductListAdapter"_ is a much better message than _"fixed bug"_, the latter is wrong, because it is in past tense, in lowercase and not so descriptive
+- Nunca dê commit em arquivos temporários, binários, etc.
+- Cuide-se para não commitar dados sensíveis.
+- Se converter um repositório privado para público, invalide os segredos (senhas de banco, AWS, etc) que já foram commitados anteriormente.
+- Não utilize force push em branches estáveis, somente em branches de recurso e comunique seus colegas para evitar perda de dados.
+- Procure rodar os testes localmente em vez de esperar a integração contínua.
+- Quanto às mensagens de commit, recomenda-se utilizar [`Conventional Commits`](https://www.conventionalcommits.org), isso permite que ferramentas automatizadas consigam extrair dados de seus commits. (geração automática de changelogs, tags, etc.). Podem ser forçadas utilizando [`commitlint`](https://commitlint.js.org) and [`@strv/commitlint-config`](https://github.com/strvcom/code-quality-tools/tree/master/packages/commitlint-config).
 
 ## Tags
 
-- Follow [Semantic Versioning](https://semver.org/) for version tags, e.g. `1.4.2`
-- Don't use "v" prefix in version tags, e.g. ~~`v1.4.2`~~
-- Each release commit must be tagged with a version name
+- Siga o [Semantic Versioning](https://semver.org/) para tags de versão.
+- Utilize o prefixo "v", por exemplo: `v1.2.5`.
+- Cada commit de release deve ter uma tag correspondente.
 
-## Backup and Archiving
-
-- Repositories from third party organizations should be backed up when project is finishing
-- Repositories with last change older than 3 years should be backed up and archived
-- Platform leaders are responsible for archiving repositories
-- Use `git clone` command for the backup, e.g. `git clone git@github.com:strvcom/surge-android.git surge-android`
-
-## Pull Request Template
+## Template para PRs
 
 ```markdown
-## Changes
+## Mudanças
 
-Explain the changes you made. What does this implement or fix?
+Explique suas mudanças.
 
 ## Links
 
-- [Issue #123](https://link.to/issue-tracking-system)
-
-## Tested with
-
-- Chrome 42 (macOS 42)
-- iPhone 42 (iOS 42)
-- Pixel 42 (Android 42)
+- [Issue #123](https://link.to/jira-issue)
 
 ## Checklist
 
-- [ ] Lint and tests pass locally with my changes
-- [ ] I've added tests that prove my feature works or that my fix is effective
-- [ ] I've added necessary documentation
+- [ ] Linter e testes passaram localmente.
+- [ ] Adicionei testes que provam que meu recurso funciona e não quebra outros recursos.
+- [ ] Adicionei a documentação necessária.
 ```
