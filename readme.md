@@ -1,7 +1,5 @@
-# STRV Guidelines
+# Diretrizes AnotaAi
 
-> Written with ❤️ at STRV
-
-These guidelines are available:
+Essas diretrizes estão disponíves:
 
 - [git](git.md)
