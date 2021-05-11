@@ -46,6 +46,7 @@
 - Nunca dê commit em arquivos temporários, binários, etc.
 - Cuide-se para não commitar dados sensíveis.
 - Se converter um repositório privado para público, invalide os segredos (senhas de banco, AWS, etc) que já foram commitados anteriormente.
+- É importante versionar lock files como `package-lock.json`, nos permite manter versões exatas das nossas dependências.
 - Não utilize force push em branches estáveis, somente em branches de recurso e comunique seus colegas para evitar perda de dados.
 - Procure rodar os testes localmente em vez de esperar a integração contínua.
 - Quanto às mensagens de commit, recomenda-se utilizar [`Conventional Commits`](https://www.conventionalcommits.org), isso permite que ferramentas automatizadas consigam extrair dados de seus commits. (geração automática de changelogs, tags, etc.). Podem ser forçadas utilizando [`commitlint`](https://commitlint.js.org) and [`@strv/commitlint-config`](https://github.com/strvcom/code-quality-tools/tree/master/packages/commitlint-config).
