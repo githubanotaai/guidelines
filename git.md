@@ -16,20 +16,20 @@
 - Utilize o nome do projeto em inglês.
 - Utilize `lowercase` e `kebab-case` para nomear os repositórios.
 - Caso o projeto contenha mais de uma palavra utilize as mesmas regras de nomenclatura.
-- Se o projeto for separado por módulos, o nome deve conter 2 partes: `<projeto>-<módulo>`, nomes de módulo sugeridos são: `api`, `worker`, `job`.
-- Se o módulo for um frontend, pode-se utilizar `frontend`, `front` ou não especificar o módulo.
-- Se o projeto não for separado por módulos, utilizar somente seu nome. Por exemplo: `integration`, `admin`.
+- Se o projeto for separado por módulos, o nome deve conter 2 partes: `<projeto>-<módulo>`, nomes de módulo sugeridos são: `api`, `worker`, `job` e `front`.
+- Se o projeto não for separado por módulos, utilizar somente seu nome. Por exemplo: `integration-dashboard`, `intelligence-reports`.
 - Se for utilizar repositórios para versionar o projeto, adicionar os sufixos *v1*, *v2*, etc. Por exemplo: `pizza-api-v1`.
 - Exemplos utilizando o projeto "intelligence": `intelligence-api`, `intelligence-analytics-worker`, `intelligence-admin`.
 - Exemplos utilizando o projeto "integration-partner-admin": `integration-partner-admin-api`, `integration-partner-admin-front`.
 - Todos repositorios devem conter um *.gitignore* ignorando arquivos temporários e binários, como `node_modules/*`.
+- Arquivos como `package.json` e `package-lock.json` devem ser versionados.
 - Todos repositórios devem conter um *README.md* com instruções básicas de uso.
 
 ## Branches
 
 - Todos projetos devem conter uma branch *master* e *develop*.
 - A branch master deve conter código estável sempre, o sistema de produção roda a partir da mesma.
-- A branch develop deve conter código compilável sempre.
+- A branch develop deve conter código compilável sempre, o sistema de staging roda a partir da mesma.
 - Utilize `lowercase` e `kebab-case` para nomes de branch, por exemplo: `database-migration`.
 - Utilize `feature/` como prefixo para branches de recursos, por exemplo: `feature/login`.
 - Utilize `hotfix/` para hotfixes, por exemplo: `hotfix/failing-to-sign-up`.
@@ -45,7 +45,7 @@
 
 - Nunca dê commit em arquivos temporários, binários, etc.
 - Cuide-se para não commitar dados sensíveis.
-- Se converter um repositório privado para público, invalide os segredos (senhas de banco, AWS, etc) que já foram commitados anteriormente.
+- Se converter um repositório privado para público, não se esqueça de invalidar os segredos (senhas de banco, AWS, etc) se já foram commitados anteriormente.
 - É importante versionar lock files como `package-lock.json`, nos permite manter versões exatas das nossas dependências.
 - Não utilize force push em branches estáveis, somente em branches de recurso e comunique seus colegas para evitar perda de dados.
 - Procure rodar os testes localmente em vez de esperar a integração contínua.
